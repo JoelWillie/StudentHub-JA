@@ -1,0 +1,17 @@
+/* Schedule page */
+/* Page-specific styles for Schedule page (keep minimal) */
+.upload-form{
+    display:flex;flex-direction:column;gap:.5rem
+}
+.preview img{
+    max-width:420px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);display:block
+}
+.preview p#previewNotice{
+    margin:0;color:var(--muted)
+}
+.preview p#previewNotice.warning{
+    color:#ffb4b4;border-left:3px solid rgba(255,120,120,0.9);padding-left:.5rem
+}
+.si-actions button{
+    margin-left:.5rem;padding:.35rem .5rem;border-radius:6px;border:0;background:rgba(34,139,230,0.06);color:var(--accent);cursor:pointer
+}

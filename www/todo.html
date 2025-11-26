@@ -1,17 +1,29 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>To-Do List</title>
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/todo.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>To-Do List</h1>
-      <hr>
-      <p>Quickly add your assignments, quizzes, projects, and daily tasks here. Everything you type will be automatically saved even if you close the app or refresh the page. Stay on top of your schoolwork and never miss a deadline again.</p>
+      <div class="site-brand">
+        <div class="logo">SLM</div>
+        <div class="title">
+          <h1>To-Do List</h1>
+          <p>Quickly add assignments and daily tasks so you never miss a deadline.</p>
+        </div>
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle light / dark">🌙</button>
+      <nav class="menubar" aria-label="Primary">
+        <ul>
+          <li><a class="menu-btn" href="index.html">Home</a></li>
+          <li><a class="menu-btn" href="schedule.html">Class Schedule</a></li>
+          <li><a class="menu-btn" href="about.html">About</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
@@ -29,6 +41,7 @@
     </footer>
   </div>
 
+  <script src="js/main.js" defer></script>
   <script src="js/todo.js" defer></script>
 </body>
 </html>

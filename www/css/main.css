@@ -1,0 +1,198 @@
+
+:root {
+	--bg: #0b1220;                
+	--panel: #0f1724;             
+	--card: #121722;              
+	--accent: #228be6;            
+	--muted: #9aa5b1;             
+	--text: #e6eef6;              
+	--glass: rgba(255,255,255,0.03);
+	--radius: 8px;                
+
+	--container-max: 900px;
+	--gutter: 1rem;
+}
+
+
+*, *::before, *::after { 
+	box-sizing: 
+	border-box; 
+}
+
+html, body { 
+	height: 100%; 
+}
+body {
+	margin: 0;
+	font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background: var(--bg);
+	color: var(--text);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.container {
+	max-width: var(--container-max);
+	width: 100%;
+	background: var(--panel);
+	border-radius: 12px;
+	padding: 1.25rem;
+	border: 1px solid rgba(255,255,255,0.03);
+}
+
+header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.5rem 1rem;
+}
+
+.site-brand { 
+	display: flex; 
+	gap: .75rem; 
+	align-items: center; 
+}
+
+.logo {
+	width: 44px; 
+	height: 44px; 
+	border-radius: 8px;
+	background: var(--accent);
+	display: flex; 
+	align-items: center; 
+	justify-content: center;
+	font-weight: 700; 
+	color: #071023;
+}
+
+.title h1 { 
+	font-size: 
+	1.25rem; margin: 0; 
+}
+
+.title p { margin: 0; 
+	font-size: 0.8rem; 
+	color: var(--muted); 
+}
+
+/* nav-menu bar */
+nav.menubar { 
+	margin-left: auto; 
+}
+
+nav.menubar ul { 
+	list-style: none; 
+	padding: 0; margin: 0; 
+	display: flex; 
+	gap: .5rem; 
+	flex-wrap: wrap; 
+}
+
+/*  nav buttons */
+nav.menubar a.menu-btn {
+	display: inline-block; 
+	padding: .45rem .8rem; 
+	border-radius: 8px;
+	background: transparent; 
+	color: var(--accent); 
+	text-decoration: none;
+	border: 1px solid rgba(255,255,255,0.04); 
+	font-weight: 600;
+}
+
+nav.menubar a.menu-btn:hover { 
+	background: rgba(63,193,201,0.06); 
+	box-shadow: 0 2px 6px rgba(63,193,201,0.08); 
+}
+
+nav.menubar a.menu-btn.active, nav.menubar a.menu-btn[aria-current="page"] {
+	background: rgba(34,139,230,0.12);
+	color: #eaf6ff; 
+	border-color: rgba(34,139,230,0.22);
+}
+
+/* Main content */
+main { padding: 1rem; }
+
+.welcome {
+	margin-top: 1rem;
+	padding: 1rem;
+	border-radius: 12px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+	border: 1px solid rgba(255,255,255,0.02);
+}
+.welcome h2 { 
+	margin: 0 0 .5rem 0; 
+	font-size: 1.1rem; 
+}
+
+.welcome p { 
+	margin: 0;
+	color: var(--muted); 
+	line-height: 1.6; 
+}
+
+.menu-grid { 
+	display: grid; 
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+	gap: .75rem; 
+	margin-top: .9rem; 
+}
+
+.card { 
+	background: var(--card); 
+	padding: .75rem; 
+	border-radius: 8px; 
+	border: 1px solid rgba(255,255,255,0.03); 
+}
+
+.card a { 
+	display: block; 
+	color: #dff7f6; 
+	text-decoration: none; 
+	font-weight: 600; 
+}
+
+.card p { 
+	margin: 0; 
+	margin-top: .5rem; 
+	color: var(--muted); 
+	font-size: .9rem; 
+}
+
+.card { 
+	transition: transform .14s ease, box-shadow .18s ease; 
+}
+
+.card:hover { 
+	background: rgba(255,255,255,0.014); 
+}
+
+/* Responsive helpers */
+@media (max-width: 520px) {
+	.title h1 { font-size: 1rem; }
+	nav.menubar { width: 100%; }
+	nav.menubar ul { justify-content: center; }
+	body { padding: 1rem; }
+}
+
+.muted { color: var(--muted); }
+
+/* focus and accessibility */
+:focus-visible{ outline:2px solid rgba(34,139,230,0.18); outline-offset:2px }
+
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after{ transition:none!important; animation:none!important } }
+
+/* Theme: light overrides when .theme-light present on <html> */
+html.theme-light{ --bg: #f6f8fa; --panel: #ffffff; --card: #ffffff; --accent: #0d6efd; --muted:#667884; --text: #0b1724 }
+
+/* theme toggle control */
+.theme-toggle{ border:1px solid rgba(255,255,255,0.06); background:transparent; padding:.35rem .45rem; border-radius:8px; cursor:pointer; margin-right:.25rem }
+.theme-toggle[aria-pressed="true"]{ background:rgba(255,255,255,0.06) }
+
+
+

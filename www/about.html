@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Student Life Manager</title>
+  <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/about.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>About This App</h1>
-      <p><strong><a href="index.html" class="back-btn">Back</a></strong></p>
-    </header>
-<hr>
-    <main class="about">
-      <section>
-        <h2> App Purpose</h2>
-        <p>This app helps students manage their daily school life with <br>
-    a class schedule, to-do list, and easy navigation — all mobile-friendly!</p>
-      </section>
-<hr>
-      <section>
-        <h2> Our School</h2>
-        <p><strong>PORTMORE COMMUNITY COLLEGE<br>
-      EQUAL OPPORTUNITY, THROUGH EDUCATION<br>
-      EMPOWERING STUDENTS THROUGH QUALITY EDUCATION.</strong></p>
-      </section>
-<hr>
-      <section>
-        <h2>👥 Development Team</h2>
+      <div class="site-brand">
+        <div class="logo">SLM</div>
+        <div class="title">
+          <h1>About This App</h1>
+          <p class="muted">Student life Manager is a lightweight student helper — class schedule, to-dos and quick info to keep you organised.</p>
+        </div>
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle light / dark">🌙</button>
+      <nav class="menubar" aria-label="Primary">
         <ul>
-          <li><strong>Kaylia</strong> - CSS</li>
-          <li><strong>Roshane Shaw</strong> - HTML</li>
-          <li><strong>Joel Willie</strong> - JavaScript</li>
-          <li><strong>Tyrese </strong> - JavaScript</li>
+          <li><a class="menu-btn" href="index.html">Home</a></li>
+          <li><a class="menu-btn" href="schedule.html">Class Schedule</a></li>
+          <li><a class="menu-btn" href="todo.html">To‑Do List</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="about">
+      <section class="card">
+        <h2>App purpose</h2>
+        <p>Help students stay organized and manage their academic life with three core tools: a class schedule, a compact to‑do list, and quick-access navigation. The app is intentionally minimal and mobile-friendly so students can quickly record and retrieve tasks and class information.</p>
+      </section>
+
+      <section class="card">
+        <h2>Our school</h2>
+        <p>Portmore Community College (PCC) provides practical, affordable education to thousands of students. The college supports student success through diverse certificate and degree programs and prepares learners for work and further study.</p>
+      </section>
+
+      <section class="card">
+        <h2>Development team</h2>
+        <ul class="team">
+          <li><strong>Kaylia</strong> — CSS</li>
+          <li><strong>Roshane Shaw</strong> — HTML</li>
+          <li><strong>Joel Willie</strong> — JavaScript</li>
+          <li><strong>Tyrese Green</strong> — JavaScript</li>
         </ul>
       </section>
+
     </main>
 <hr>
-
-<br>
-<br>
-<br>
-<br>
-<br>
     <footer>
     <p><strong>Management Information System - YEAR 2</strong></p>
 
     </footer>
-  </div>
-
+</div>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

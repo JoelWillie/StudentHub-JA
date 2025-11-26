@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Student Life Manager</title>
-  <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
   <div class="container">
     <header>
-    <center> <h1>Student Life Manager</h1></center>
-    </header>
-
-    <main>
-
- <h3>  MENU </h3
-  <nav class="menubar">
-	  <strong>
-        <a href="schedule.html" class="menu-btn">Class Schedule</a><br>
-		<br>
-        <a href="todo.html" class="menu-btn">To-Do List</a><br>
-		<br>
-        <a href="about.html" class="menu-btn">About</a><br>
-		</strong> 
-  </nav>
-  
-  <hr>
+      <div class="site-brand">
+        <div class="logo">SLM</div>
+        <div class="title">
+          <h1>Student Life Manager</h1>
+          <p>Organize your classes, assignments and schedule</p>
+          
+          <main>
       <section class="welcome">
         <h2>Welcome, Student!</h2>
-        <hr>
-        <p> Welcome to your student-friendly mobile app that keeps students<br>informed. 
-            Keep track of your schoolwork, assignments, and classes.<br><br>
-            Stay organized with your weekly class schedule, never miss <br>
-            an assignment with the interactive to-do list,and quickly  <br>
-            access everything you need in one simple app <br> <br>
-            Designed specifically for Portmore Community College <br>
-            students, this app helps you manage your busy student life <br>
-            with ease. Get started now and take control of your academic SUCCESS!</p> <br>
+        <p>Welcome to your student-friendly app that keeps you organized. Track your classes, assignments, and notes — all in one place. Take control of your academic success with a few clicks.</p>
       </section>
-	  <br>
 
-	 <hr>
+      <div class="menu-grid" aria-hidden="false">
+        <div class="card">
+          <a href="schedule.html">View / Edit Class Schedule</a>
+          <p>Upload timetables, add schedule items, and keep everything in local storage.</p>
+        </div>
+        <div class="card">
+          <a href="todo.html">Manage To‑Dos</a>
+          <p>Create quick tasks, mark them done, and store your list locally.</p>
+        </div>
+        </div>
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle light / dark">🌙</button>
+      <nav class="menubar" aria-label="Primary">
       
+      </nav>
+    </header>
+
+    
+        <div class="card">
+          <a href="about.html">About this App</a>
+          <p>Learn about the project and get pointers for using features.</p>
+        </div>
+      </div>
+
     </main>
 
 
-    <footer>
-      <p> EQUAL OPPORTUNITY THROUGH EDUCATION <br>
-			POWERED BY PCC</p>
-    </footer>
-  </div>
+  
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

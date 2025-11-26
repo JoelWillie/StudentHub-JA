@@ -1,0 +1,72 @@
+/* about.css — lightweight page-specific styles for About page */
+.about {    
+    display: grid; 
+    gap: 1rem; 
+    grid-template-columns: 
+    repeat(auto-fit,minmax(240px,1fr)); 
+    margin-top: .75rem; 
+}
+
+.about .card {
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: inherit;
+    transition: transform .18s ease, border-color .12s ease, background .12s ease;
+    transform-origin: center bottom;
+    will-change: transform, opacity;
+}
+.about .card h2{ margin:0 0 .5rem 0; font-size:1.05rem }
+.about .card p{ margin:0; color:var(--muted); line-height:1.5; font-size:.95rem }
+.about .card:hover{ transform: translateY(-6px); border-color: rgba(34,139,230,0.12); background: rgba(255,255,255,0.02) }
+
+.about .team{
+    display:flex;
+    flex-direction:column;
+    gap:.45rem
+}
+.about .team li{
+    list-style:none;
+    padding:.45rem;
+    border-radius:6px;
+    background:rgba(255,255,255,0.01);
+    border:1px solid rgba(255,255,255,0.02);
+    padding:.45rem;
+    border-radius:6px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)
+}
+
+/* This is competely optional, jsut decided to add this to it for fun */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px) scale(.995); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.js-enabled:not(.mounted) .about .card { 
+    opacity: 0; 
+    transform: translateY(12px); 
+}
+
+.js-enabled.mounted .about .card { 
+    opacity: 1; 
+    transform: none; 
+}
+
+.js-enabled.mounted .about .card:nth-child(1) { animation: fadeUp .36s cubic-bezier(.2,.9,.22,1) .06s both;
+}
+.js-enabled.mounted .about .card:nth-child(2) { animation: fadeUp .36s cubic-bezier(.2,.9,.22,1) .16s both; }
+.js-enabled.mounted .about .card:nth-child(3) { animation: fadeUp .36s cubic-bezier(.2,.9,.22,1) .28s both; }
+
+/* small, friendly logo pop */
+.site-brand .logo { transition: transform .22s cubic-bezier(.2,.9,.22,1); }
+.js-enabled.mounted .site-brand .logo { transform: scale(1.02) rotate(-3deg); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .js-enabled.mounted .about .card,
+    .site-brand .logo { animation: none; transition: none; transform: none !important; opacity: 1 !important; }
+}
+
+@media (max-width:520px){
+    .about{grid-template-columns:1fr}
+}

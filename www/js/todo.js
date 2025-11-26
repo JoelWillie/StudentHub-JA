@@ -1,11 +1,10 @@
-// In this we are using the local storage to store the tasks
-// local storage is a way to store data in the browser a way refresh the page when it is closed
-document.addEventListener('DOMContentLoaded', function () {
-  var input = document.getElementById('taskInput');
-  var addBtn = document.getElementById('addBtn');
-  var list = document.getElementById('taskList');
 
-  var tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('taskInput');
+  const addBtn = document.getElementById('addBtn');
+  const list = document.getElementById('taskList');
+
+  let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
   function render() {
     list.innerHTML = '';

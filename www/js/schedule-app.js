@@ -1,9 +1,9 @@
 // Add functionality to use forms to add and update schedule items by saving it to the local storage that use created
 document.addEventListener('DOMContentLoaded', function () {
-  var form = document.getElementById('scheduleForm');
-  var itemsList = document.getElementById('scheduleItems');
+  const form = document.getElementById('scheduleForm');
+  const itemsList = document.getElementById('scheduleItems');
 
-  var items = JSON.parse(localStorage.getItem('scheduleItems') || '[]');
+  let items = JSON.parse(localStorage.getItem('scheduleItems') || '[]');
 
   function render() {
     itemsList.innerHTML = '';
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function populateFormForEdit(idx) {
-    var it = items[idx];
+    const it = items[idx];
     document.getElementById('course').value = it.course;
     document.getElementById('date').value = it.date;
     document.getElementById('time').value = it.time || '';
@@ -70,15 +70,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var course = document.getElementById('course').value.trim();
-    var date = document.getElementById('date').value;
-    var time = document.getElementById('time').value;
-    var notes = document.getElementById('notes').value.trim();
+    const course = document.getElementById('course').value.trim();
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const notes = document.getElementById('notes').value.trim();
 
     if (!course || !date) return;
 
     if (form.dataset.editIndex !== undefined) {
-      var idx = parseInt(form.dataset.editIndex, 10);
+      const idx = parseInt(form.dataset.editIndex, 10);
       items[idx] = { course: course, date: date, time: time, notes: notes };
       delete form.dataset.editIndex;
       document.getElementById('addScheduleBtn').textContent = 'Add to Schedule';
