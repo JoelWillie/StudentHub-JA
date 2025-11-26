@@ -1,0 +1,35 @@
+/* Please note all of this CSS is optional and can be removed if you don't want these UX effects */
+/* ux.css — shared interaction + page transitions (subtle, optional) */
+
+:root{
+    --ux-bg-accent: rgba(255,255,255,0.03);
+    --ux-dot: rgba(255,255,255,0.06);
+}
+
+/* subtle background layer */
+.site-background{
+    position:fixed;inset:0;pointer-events:none;z-index:0;mix-blend-mode:screen;opacity:.55;filter:blur(36px) saturate(.9);
+}
+.site-background .orb{position:absolute;border-radius:999px;opacity:.22;transform:translate(-50%,-50%);filter:blur(18px)}
+.site-background .orb--a{width:380px;height:380px;background:linear-gradient(135deg, rgba(34,139,230,0.22), rgba(34,139,230,0.08));left:8%;top:28%}
+.site-background .orb--b{width:260px;height:260px;background:linear-gradient(45deg, rgba(34,139,230,0.12), rgba(34,139,230,0.04));left:72%;top:10%}
+.site-background .orb--c{width:140px;height:140px;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));left:88%;top:70%}
+
+@keyframes uxDrift { from{ transform: translate(-50%,-50%) translateY(-6px)} to{ transform: translate(-50%,-50%) translateY(6px)} }
+.site-background .orb{animation: uxDrift 6s ease-in-out infinite alternate}
+
+@media (prefers-reduced-motion: reduce){
+    .site-background{opacity:.0}
+    .site-background .orb{animation:none}
+}
+
+:root{--transition-fade: 240ms}
+.page-enter *{opacity:0;transform:translateY(6px);transition:opacity var(--transition-fade) ease,var(--transition-fade) transform ease}
+.mounted.page-enter *{opacity:1;transform:none}
+.page-exit{opacity:1;transition:opacity var(--transition-fade) ease}
+.page-exit body, .page-exit .container{opacity:0;transform:translateY(4px);transition:opacity var(--transition-fade) ease, transform var(--transition-fade) ease}
+
+.container{position:relative;z-index:2}
+
+.ux-toggle{position:relative;display:inline-flex;align-items:center;gap:.35rem;border-radius:8px;padding:.25rem .45rem;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+.ux-toggle[aria-pressed="true"]{background:rgba(255,255,255,0.03)}
